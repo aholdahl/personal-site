@@ -1,0 +1,157 @@
+/* default/mobile 320-414 px */
+
+html {
+    background-color: #5f9ea0;
+}
+
+.myPage {
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    text-align: center;
+    font-weight: lighter;
+    margin: 0px;
+}
+
+/* The page title box */
+.myHeader {
+    background-color: #ededed;
+    color: #332e37;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    height: fit-content;
+    margin: 20px 0px;
+}
+
+/* Photo of me */
+.myHeadshot {
+    display: none;
+}
+
+/* My name and title */
+.myDeclaration {
+    align-self: center;
+}
+
+.myName, .myTitle {
+    font-variant: small-caps;
+    font-weight: lighter;
+}
+.myName {
+    margin: 5px 0px;
+}
+.myTitle {
+    margin: 5px 0px;
+}
+
+.mySection {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: flex-start;
+}
+
+/* Each article */
+.myTile {
+    color: #ededed;
+    background-color: rgb(61, 106, 107);
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+/* article header */
+.subheader, .myProjects {
+    background-color: rgba(255, 255, 255, 0.589);
+    color: #2f4f4f;
+    padding: 5px;
+    margin: 10px 0px;
+}
+
+/* article body */
+.myContent {
+    margin: 10px;
+}
+
+/* all hyperlinks (social media & projects) */
+.myLinks {
+    color: #ededed;
+    background-color: rgba(0, 0, 0, 0.356);
+    display: inline-block;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+.myLinks:hover {
+    color: rgb(167, 242, 245);
+}
+
+/* Project Titles */
+.myProjects {
+    font-size: 16px;
+}
+
+/* Project screenshots */
+.myThumbnails {
+    width: 90%;
+}
+
+
+/* iPad size */
+
+@media only screen and (min-width: 768px){
+
+    .myHeader {
+        height: fit-content;
+        justify-content: space-between;
+    }
+    .myHeadshot {
+        display: block;
+        max-height: 100px;
+        float: left;
+    }
+
+    .myDeclaration {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .values, .skills, .social {
+        width: 30%;
+    }
+    .project {
+        width: 45%;
+    }
+    .mySection .projectTitle {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+    /* .subheader {} */
+    /* .myContent {} */
+    /* .myLinks {} */
+    /* .myThumbnails {} */
+}
+
+/* iPad Pro */
+
+@media only screen and (min-width: 1324px){
+
+    .about, .values, .skills, .social {
+        width: 45%;
+    }
+    .project {
+        width: 22%;
+    }
+    /* .myPage {} */
+    /* .myHeader {} */
+    /* .myHeadshot {} */
+    /* .myDeclaration {} */
+    /* .myName {} */
+    /* .myTitle {} */
+    /* .mainContent {} */
+    /* .bioSection {} */
+    /* .myTile {} */
+    /* .subheader {} */
+    /* .myContent {} */
+    /* .myLinks {} */
+    /* .myThumbnails {} */
+}
