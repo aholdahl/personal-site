@@ -123,7 +123,7 @@ html {
             .myHeadshot {
                 display: block;
                 max-height: 100px;
-                /* grid-area: "headshot"; */
+                grid-area: headshot;
             }
             .myLinks {
                 display: inline-block;
@@ -139,10 +139,11 @@ html {
                 display: grid;
                 grid-template-columns: 1fr 1fr;
                 grid-gap: 10px;
+                grid-template-areas:
+                "title title"
             }
             .projectTitle {
-                grid-column: 1/3;
-                grid-row: 1/2;
+                grid-area: title;
                 padding: 5px 0px;
             }
         }
@@ -155,16 +156,17 @@ html {
                 display: grid;
                 grid-template-columns: 1fr 1fr;
                 grid-gap: 10px;
+                grid-template-areas:
+                "about skills"
+                "values social"
             }
             .skills {
-                grid-column: 2/3;
-                grid-row: 1/2;
+                grid-area: skills;
             }
             .projectSection {
                 grid-template-columns: 1fr 1fr 1fr;
-            }
-            .projectTitle {
-                grid-column: 1/4;
+                grid-template-areas:
+                "title title title"
             }
         }
         /* Desktops, approximately */
@@ -172,31 +174,29 @@ html {
             .bioSection {
                 grid-template-columns: 1fr 1fr 1fr;
                 grid-template-rows: 1fr 1fr;
+                grid-template-areas:
+                "about about about"
+                "values skills social"
             }
             .about {
-                grid-column: 1/4;
-                grid-row: 1/2;
-            }
-            .skills {
-                grid-column: 2/3;
-                grid-row: 2/3;
+                grid-area: about;
             }
         }
         /* Televisions */
         @media only screen and (min-width: 1620px){
             .projectSection {
                 grid-template-columns: 1fr 1fr 1fr 1fr;
+                grid-template-areas:
+                "title title title title"
+                "project project project project"
+                ". cinema hotel ."
             }
-            .projectTitle {
-                grid-column: 1/5;
-            }
+
             .cinema {
-                grid-column: 2/3;
-                grid-row: 3/4;
+                grid-area: cinema;
             }
             .hotel {
-                grid-column: 3/4;
-                grid-row: 3/4;
+                grid-area: hotel;
             }
         }
     }
