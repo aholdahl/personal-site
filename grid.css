@@ -1,0 +1,203 @@
+    :root {
+        --primary-color: rgba(95, 158, 160, 1);
+        --secondary-color: rgb(61, 106, 107);
+        --grayscale-light: rgba(237, 237, 237, 1);
+        --grayscale-medium: rgba(255, 255, 255, 0.59);
+        --grayscale-dark: rgba(51, 46, 55, 1);
+        --primary-font: "Roboto", "Helvetica", "Arial", sans-serif;
+        --secondary-font: Garamond, serif;
+        /* --xs-breakpoint: 320px;
+        --sm-breakpoint: 480px;
+        --md-breakpoint: 720px;
+        --lg-breakpoint: 1080px;
+        --xl-breakpoint: 1620px; */
+    }
+/* default less than 320px */
+
+html {
+    background-color: var(--primary-color);
+}
+
+.myPage {
+    font-family: var(--primary-font);
+    text-align: center;
+    font-weight: lighter;
+    margin: 0px;
+}
+
+/* The page title box */
+.myHeader {
+    background-color: var(--grayscale-light);
+    color: var(--grayscale-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: fit-content;
+    margin: 20px 0px;
+}
+
+/* Photo of me */
+.myHeadshot {
+    display: none;
+}
+
+/* My name and title */
+.myDeclaration {
+    align-self: center;
+}
+
+.myName, .myTitle {
+    font-variant: small-caps;
+    font-weight: lighter;
+}
+.myName {
+    margin: 5px 0px;
+}
+.myTitle {
+    margin: 5px 0px;
+}
+
+.mySection {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: flex-start;
+}
+
+/* Each article */
+.myTile, .projectTitle {
+    color: var(--grayscale-light);
+    background-color: var(--secondary-color);
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+/* article header */
+.subheader, .myProjects {
+    background-color: var(--grayscale-medium);
+    color: var(--secondary-color);
+    padding: 5px;
+    margin: 10px 0px;
+}
+
+/* article body */
+.myContent {
+    margin: 10px;
+}
+
+/* all hyperlinks (social media & projects) */
+.myLinks {
+    color: var(--grayscale-light);
+    background-color: var(--grayscale-dark);
+    opacity: 75%;
+    display: block;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+.myLinks:hover {
+    color: var(--primary-color);
+}
+
+/* Project Titles */
+.myProjects {
+    font-size: 16px;
+}
+
+/* Project screenshots */
+.myThumbnails {
+    width: 90%;
+}
+
+@supports (display: grid){
+	@supports(grid-area: auto){
+        /* Smart Phones, approximately */
+        @media only screen and (min-width: 320px){
+            .myHeader {
+                display: grid;
+                grid-template-columns: 1fr 4fr;
+                grid-template-rows: 1fr;
+                grid-template-areas:
+                "headshot declaration";
+            }
+            .myHeadshot {
+                display: block;
+                max-height: 100px;
+                /* grid-area: "headshot"; */
+            }
+            .myLinks {
+                display: inline-block;
+                width: 25%;
+            }
+        }
+        /* Tablets, approximately */
+        @media only screen and (min-width: 480px){
+            .myHeader {
+                grid-template-columns: 1fr 6fr;
+            }
+            .projectSection {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-gap: 10px;
+            }
+            .projectTitle {
+                grid-column: 1/3;
+                grid-row: 1/2;
+                padding: 5px 0px;
+            }
+        }
+        /* Laptops, approximately */
+        @media only screen and (min-width: 720px){
+            .myHeader {
+                grid-template-columns: 1fr 9fr;
+            }
+            .bioSection {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-gap: 10px;
+            }
+            .skills {
+                grid-column: 2/3;
+                grid-row: 1/2;
+            }
+            .projectSection {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+            .projectTitle {
+                grid-column: 1/4;
+            }
+        }
+        /* Desktops, approximately */
+        @media only screen and (min-width: 1080px){
+            .bioSection {
+                grid-template-columns: 1fr 1fr 1fr;
+                grid-template-rows: 1fr 1fr;
+            }
+            .about {
+                grid-column: 1/4;
+                grid-row: 1/2;
+            }
+            .skills {
+                grid-column: 2/3;
+                grid-row: 2/3;
+            }
+        }
+        /* Televisions */
+        @media only screen and (min-width: 1620px){
+            .projectSection {
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+            }
+            .projectTitle {
+                grid-column: 1/5;
+            }
+            .cinema {
+                grid-column: 2/3;
+                grid-row: 3/4;
+            }
+            .hotel {
+                grid-column: 3/4;
+                grid-row: 3/4;
+            }
+        }
+    }
+}

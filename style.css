@@ -52,7 +52,7 @@ html {
 }
 
 /* Each article */
-.myTile {
+.myTile, .projectTitle {
     color: #ededed;
     background-color: rgb(61, 106, 107);
     margin-bottom: 20px;
